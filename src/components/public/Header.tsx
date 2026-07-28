@@ -7,7 +7,7 @@ import { Phone, Mail, Menu, X } from 'lucide-react';
 
 const navLinks = [
   { label: 'ACCUEIL', href: '/', sectionId: 'accueil' },
-  { label: 'HOMMAGE', href: '/#merci-mourad', sectionId: 'merci-mourad' },
+  { label: 'FONDATEUR', href: '/#fondateur', sectionId: 'fondateur' },
   { label: 'À PROPOS', href: '/#about', sectionId: 'about' },
   { label: 'SERVICES', href: '/#services', sectionId: 'services' },
   { label: 'SECTEURS', href: '/#sectors', sectionId: 'sectors' },

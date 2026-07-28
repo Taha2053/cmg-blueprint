@@ -20,7 +20,7 @@ const milestones = [
 
 export default function MerciMourad() {
   return (
-    <section id="merci-mourad" className="relative bg-champagne py-24 lg:py-32 overflow-hidden">
+    <section id="fondateur" className="relative bg-champagne py-24 lg:py-32 overflow-hidden">
       <div className="relative max-w-[1400px] mx-auto px-6">
         {/* ── Row 1 — portrait paired with the heading block ───────────── */}
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -51,16 +51,9 @@ export default function MerciMourad() {
                     Mourad Guellaty
                   </span>
                 </div>
-                {/* TEMPORARY placeholder portrait — must be replaced with the
-                    real photograph of Mourad Guellaty before going live.
-                    Drop the file at public/founder.jpg and swap the URL below. */}
-                <div
-                  className="absolute inset-0 bg-cover bg-top saturate-[0.8] contrast-[1.02]"
-                  style={{
-                    backgroundImage:
-                      'url(https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop)',
-                  }}
-                />
+                {/* Real portrait goes here: drop the file at public/founder.jpg
+                    and restore a div with backgroundImage: 'url(/founder.jpg)'.
+                    Until then the MG monogram above is shown. */}
               </div>
             </div>
           </motion.div>
@@ -78,7 +71,7 @@ export default function MerciMourad() {
             {/* heading + signature */}
             <motion.div className="relative mt-6" {...fadeUp}>
               <h2 className="relative z-10 font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.04] text-text-dark tracking-tight">
-                Merci, Monsieur <span className="text-accent">Mourad</span>
+                Monsieur <span className="text-accent">Mourad</span>
               </h2>
               <span
                 aria-hidden

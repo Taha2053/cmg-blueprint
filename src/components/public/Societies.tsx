@@ -91,17 +91,28 @@ export default function Societies() {
         </motion.div>
       </div>
 
-      <div className="relative overflow-hidden">
-        <div className="flex items-center gap-12" style={{ animation: 'marquee 30s linear infinite' }}>
+      <div
+        className="relative overflow-hidden"
+        style={{
+          WebkitMaskImage:
+            'linear-gradient(to right, transparent, #000 7%, #000 93%, transparent)',
+          maskImage:
+            'linear-gradient(to right, transparent, #000 7%, #000 93%, transparent)',
+        }}
+      >
+        <div
+          className="flex items-center gap-14 hover:[animation-play-state:paused]"
+          style={{ animation: 'marquee 45s linear infinite' }}
+        >
           {[...logos, ...logos].map((src, i) => (
             <div
               key={i}
-              className="inline-flex items-center justify-center h-20 w-36 shrink-0"
+              className="inline-flex items-center justify-center h-16 w-36 shrink-0"
             >
               <img
                 src={`/logos/${encodeURI(src)}`}
                 alt=""
-                className="max-h-full max-w-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                className="max-h-full max-w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
               />
             </div>
           ))}

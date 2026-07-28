@@ -37,7 +37,7 @@ export default function Contact() {
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-20">
           <motion.div className="lg:col-span-5" {...fadeUp}>
             <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">Contact</span>
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.08] text-text-dark mt-6 tracking-tight">
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-text-dark mt-6 tracking-tight">
               Discutons de votre projet
             </h2>
             <p className="text-text-dark-muted text-base sm:text-lg mt-6 leading-relaxed max-w-md">

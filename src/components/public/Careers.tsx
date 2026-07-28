@@ -29,7 +29,7 @@ export default async function Careers() {
             <a
               key={job.id}
               href={`mailto:contact@cabinetguellaty.com?subject=Candidature%20-%20${encodeURIComponent(job.title)}`}
-              className="group block bg-white border border-black/10 px-8 py-6 hover:border-accent/40 transition-all duration-300"
+              className="group block surface shadow-soft px-8 py-6 hover:shadow-soft-lg hover:border-accent/40 hover:-translate-y-0.5 transition-all duration-300"
             >
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="flex flex-wrap items-center gap-6">

@@ -56,7 +56,7 @@ export default function About() {
               {/* image */}
               <div className="relative aspect-[1/1] overflow-hidden bg-[#E7E0D2] shadow-soft-lg ring-1 ring-black/[0.05]">
                 <img
-                  src="/cabinet.png"
+                  src="/cabinet.jpg"
                   alt="Bureau MG & Associés"
                   className="w-full h-full object-cover saturate-[0.85] contrast-[1.02]"
                 />

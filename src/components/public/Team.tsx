@@ -19,7 +19,7 @@ const founder: Member = { name: 'Mourad Guellaty', role: 'Fondateur', initials: 
 // with the person's exact title when confirmed. Reorder the tiers to reflect
 // real seniority if needed.
 const tier2: Member[] = [
-  { name: 'Ayman El Euch', role: 'Manager', photo: '/cabinet/Ayman-El-Euch.png' },
+  { name: 'Ayman El Euch', role: 'Manager', photo: '/cabinet/Ayman-El-Euch.jpg' },
   { name: 'Walid Moussa', role: 'Manager', photo: '/cabinet/Walid-Moussa.jpeg' },
 ];
 

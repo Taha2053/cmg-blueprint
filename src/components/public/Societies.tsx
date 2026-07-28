@@ -84,7 +84,7 @@ export default function Societies() {
     <section className="bg-ivoire py-20 overflow-hidden border-b border-black/6">
       <div className="max-w-[1280px] mx-auto px-6 mb-12">
         <motion.div className="text-center" {...fadeUp}>
-          <span className="text-text-dark-muted text-xs font-semibold tracking-[0.18em] uppercase">
+          <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">
             Ils nous ont fait confiance
           </span>
           <div className="w-8 h-px bg-accent/50 mx-auto mt-4" />

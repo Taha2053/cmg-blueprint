@@ -17,17 +17,17 @@ export default async function ArticlePage({ params }: Props) {
   if (!article) notFound();
 
   return (
-    <div className="min-h-screen bg-dark">
-      <div className="max-w-[800px] mx-auto px-6 py-32">
+    <div className="min-h-screen bg-ivoire">
+      <div className="max-w-[800px] mx-auto px-6 pt-40 pb-24">
         <Link
           href="/news"
-          className="inline-flex items-center gap-2 text-text-muted hover:text-text-primary text-sm transition-colors mb-12"
+          className="inline-flex items-center gap-2 text-text-dark-muted hover:text-accent text-sm transition-colors mb-12"
         >
           <ArrowLeft size={16} /> Retour aux actualités
         </Link>
 
         {article.coverImage && (
-          <div className="aspect-[16/9] overflow-hidden mb-12">
+          <div className="aspect-[16/9] overflow-hidden mb-12 rounded-2xl shadow-soft-lg ring-1 ring-black/[0.05]">
             <img
               src={article.coverImage}
               alt=""
@@ -37,7 +37,7 @@ export default async function ArticlePage({ params }: Props) {
         )}
 
         <div className="mb-8">
-          <p className="text-text-muted text-sm mb-4">
+          <p className="text-text-dark-muted text-sm mb-4">
             {article.publishedAt &&
               new Date(article.publishedAt).toLocaleDateString('fr-FR', {
                 year: 'numeric',
@@ -45,13 +45,13 @@ export default async function ArticlePage({ params }: Props) {
                 day: 'numeric',
               })}
           </p>
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-text-primary tracking-tight">
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-text-dark tracking-tight">
             {article.title}
           </h1>
         </div>
 
         <div
-          className="prose prose-invert prose-lg max-w-none text-text-muted leading-relaxed"
+          className="prose prose-lg max-w-none text-text-dark-muted leading-relaxed"
           dangerouslySetInnerHTML={{ __html: article.content }}
         />
       </div>

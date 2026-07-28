@@ -10,24 +10,24 @@ export default async function NewsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-dark">
-      <div className="max-w-[1280px] mx-auto px-6 py-32">
+    <div className="min-h-screen bg-ivoire">
+      <div className="max-w-[1280px] mx-auto px-6 pt-40 pb-24">
         <div className="mb-16">
           <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">Actualités</span>
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-text-primary mt-6 tracking-tight">
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-text-dark mt-6 tracking-tight">
             Nos actualités
           </h1>
         </div>
 
         {articles.length === 0 ? (
-          <p className="text-text-muted text-lg">Aucun article publié pour le moment.</p>
+          <p className="text-text-dark-muted text-lg">Aucun article publié pour le moment.</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((article) => (
               <Link
                 key={article.id}
                 href={`/news/${article.slug}`}
-                className="group block bg-card border border-card-border hover:border-accent/30 transition-all duration-300"
+                className="group block surface mirror shadow-soft hover:shadow-soft-lg hover:border-accent/30 hover:-translate-y-1 transition-all duration-300"
               >
                 {article.coverImage && (
                   <div className="aspect-[16/9] overflow-hidden">
@@ -39,7 +39,7 @@ export default async function NewsPage() {
                   </div>
                 )}
                 <div className="p-6">
-                  <p className="text-text-muted text-xs mb-3">
+                  <p className="text-text-dark-muted text-xs mb-3">
                     {article.publishedAt &&
                       new Date(article.publishedAt).toLocaleDateString('fr-FR', {
                         year: 'numeric',
@@ -47,11 +47,11 @@ export default async function NewsPage() {
                         day: 'numeric',
                       })}
                   </p>
-                  <h2 className="font-serif text-xl text-text-primary group-hover:text-accent transition-colors mb-3">
+                  <h2 className="font-serif text-xl text-text-dark group-hover:text-accent transition-colors mb-3">
                     {article.title}
                   </h2>
                   {article.summary && (
-                    <p className="text-text-muted text-sm leading-relaxed line-clamp-3">
+                    <p className="text-text-dark-muted text-sm leading-relaxed line-clamp-3">
                       {article.summary}
                     </p>
                   )}

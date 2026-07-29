@@ -95,24 +95,17 @@ export default function Team() {
           </p>
         </motion.div>
 
-        {/* ── Pyramid ──────────────────────────────────────────────────── */}
+        {/* ── Team Grid ────────────────────────────────────────────────── */}
         <div className="flex flex-col items-center mt-20 lg:mt-24">
-          {/* apex — founder */}
-          <Avatar m={founder} size="lg" />
-
-          {/* connector */}
-          <div className="w-px h-10 lg:h-12 bg-gradient-to-b from-accent/40 to-gold/20 my-6 lg:my-8" />
-
-          {/* tier 2 */}
+          {/* row 1 — founder + Walid Moussa */}
           <div className="flex flex-wrap justify-center gap-x-16 lg:gap-x-28 gap-y-12">
-            {tier2.map((m, i) => (
-              <Avatar key={m.name} m={m} size="md" delay={i * 0.1} />
-            ))}
+            <Avatar m={founder} size="lg" />
+            <Avatar m={tier2.find(m => m.name === 'Walid Moussa')!} size="md" delay={0.1} />
           </div>
 
-          {/* tier 3 */}
+          {/* row 2 — the rest */}
           <div className="flex flex-wrap justify-center gap-x-10 lg:gap-x-16 gap-y-12 mt-12 lg:mt-16">
-            {tier3.map((m, i) => (
+            {[...tier2.filter(m => m.name !== 'Walid Moussa'), ...tier3].map((m, i) => (
               <Avatar key={m.name} m={m} size="md" delay={i * 0.1} />
             ))}
           </div>

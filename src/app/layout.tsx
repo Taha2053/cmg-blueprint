@@ -3,6 +3,7 @@ import { Inter, Cormorant_Garamond, Pinyon_Script } from 'next/font/google';
 import './globals.css';
 import SmoothScroll from '@/components/SmoothScroll';
 import ScrollProgress from '@/components/ScrollProgress';
+import IntroLoader from '@/components/IntroLoader';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -97,6 +98,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <IntroLoader />
         <SmoothScroll />
         <ScrollProgress />
         {children}

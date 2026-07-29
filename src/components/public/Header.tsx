@@ -86,14 +86,14 @@ export default function Header() {
             <Link
               key={link.label}
               href={link.href}
-              className={`relative text-[11px] font-medium tracking-[0.08em] uppercase whitespace-nowrap transition-colors duration-300 py-1
+              className={`group relative text-[11px] font-medium tracking-[0.08em] uppercase whitespace-nowrap transition-colors duration-300 py-1
                 ${activeSection === link.sectionId ? 'text-text-dark' : 'text-text-dark-muted hover:text-text-dark'}
               `}
             >
               {link.label}
               <span
                 className={`absolute -bottom-1 left-0 h-[2px] bg-accent transition-all duration-500 ease-out ${
-                  activeSection === link.sectionId ? 'w-full' : 'w-0'
+                  activeSection === link.sectionId ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}
               />
             </Link>
@@ -103,7 +103,7 @@ export default function Header() {
         <div className="flex items-center gap-4 shrink-0">
           <Link
             href="/#contact"
-            className="hidden md:inline-flex items-center bg-accent text-white px-5 py-2.5 text-[11px] font-semibold tracking-wider uppercase whitespace-nowrap hover:bg-accent/90 transition-all duration-300"
+            className="hidden md:inline-flex items-center bg-accent text-white px-5 py-2.5 text-[11px] font-semibold tracking-wider uppercase whitespace-nowrap hover:bg-accent/90 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_-10px_rgba(168,24,40,0.55)] transition-all duration-300"
           >
             PRENDRE RENDEZ-VOUS
           </Link>

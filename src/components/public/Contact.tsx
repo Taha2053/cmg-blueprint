@@ -6,8 +6,8 @@ import { MapPin, Phone, Mail, Clock, FileText, CheckCircle } from 'lucide-react'
 import { sendMessage } from '@/actions/messages';
 
 const fadeUp = {
-  initial: { opacity: 0, y: 40 },
-  whileInView: { opacity: 1, y: 0 },
+  initial: { opacity: 0, y: 40, filter: 'blur(6px)' },
+  whileInView: { opacity: 1, y: 0, filter: 'blur(0px)' },
   viewport: { once: true, margin: '-80px' },
   transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
 };
@@ -129,7 +129,7 @@ export default function Contact() {
                   <textarea id="message" name="message" rows={5} placeholder="Votre message..." required className="w-full bg-white/65 backdrop-blur-sm border border-white/60 text-text-dark text-sm px-5 py-4 placeholder:text-text-dark-muted/50 focus:outline-none focus:border-accent transition-colors resize-none" />
                 </div>
                 {error && <p className="text-red-500 text-sm">{error}</p>}
-                <button type="submit" className="w-full bg-accent text-white px-8 py-5 text-sm font-semibold tracking-wider uppercase hover:bg-accent/90 transition-all duration-300 group">
+                <button type="submit" className="w-full bg-accent text-white px-8 py-5 text-sm font-semibold tracking-wider uppercase hover:bg-accent/90 hover:-translate-y-0.5 hover:shadow-[0_12px_34px_-10px_rgba(168,24,40,0.55)] transition-all duration-300 group">
                   Envoyer votre message{' '}
                   <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
                 </button>

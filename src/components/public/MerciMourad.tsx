@@ -67,13 +67,13 @@ function Presentation() {
         </p>
 
         <div className="grid sm:grid-cols-2 gap-8 mt-8">
-          <p className="text-text-dark-muted text-[14px] leading-[1.75]">
+          <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
             Mourad Guellaty a consacré sa vie à l’expertise comptable et à l’audit en Tunisie.
             Ancien président de l’Ordre des Experts Comptables de Tunisie, il a porté la voix de la
             profession avec <span className="text-text-dark font-medium">indépendance</span> et{' '}
             <span className="text-text-dark font-medium">engagement</span>.
           </p>
-          <p className="text-text-dark-muted text-[14px] leading-[1.75]">
+          <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
             Son leadership visionnaire a permis au cabinet de rayonner bien au-delà des frontières,
             accompagnant les plus grandes entreprises tunisiennes et internationales dans leurs
             enjeux les plus stratégiques.
@@ -108,7 +108,7 @@ function Parcours() {
               >
                 {m.year}
               </div>
-              <p className="text-text-dark-muted text-[13px] leading-snug mt-2">{m.text}</p>
+              <p className="text-text-dark-muted text-sm leading-snug mt-2">{m.text}</p>
             </div>
           ))}
         </div>

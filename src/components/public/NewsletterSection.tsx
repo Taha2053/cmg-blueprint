@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 import { subscribe } from '@/actions/subscribers';
 
 const fadeUp = {
-  initial: { opacity: 0, y: 40 },
-  whileInView: { opacity: 1, y: 0 },
+  initial: { opacity: 0, y: 40, filter: 'blur(6px)' },
+  whileInView: { opacity: 1, y: 0, filter: 'blur(0px)' },
   viewport: { once: true, margin: '-80px' },
   transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
 };
@@ -62,7 +62,7 @@ export default function NewsletterSection() {
             <button
               type="submit"
               disabled={status === 'loading'}
-              className="bg-accent text-white px-8 py-4 text-xs font-semibold tracking-wider uppercase hover:bg-accent/90 transition-all duration-300 disabled:opacity-50 shrink-0"
+              className="bg-accent text-white px-8 py-4 text-xs font-semibold tracking-wider uppercase hover:bg-accent/90 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_-10px_rgba(168,24,40,0.55)] transition-all duration-300 disabled:opacity-50 shrink-0"
             >
               {status === 'loading' ? 'Envoi...' : "S'inscrire"}
             </button>

@@ -2,19 +2,29 @@
 
 import { motion } from 'framer-motion';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 40 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-80px' },
-  transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
+const EASE = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
+
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.14, delayChildren: 0.15 } },
 };
 
-const containerFade = {
-  initial: { opacity: 0 },
-  whileInView: { opacity: 1 },
-  viewport: { once: true },
-  transition: { duration: 0.8, delay: 0.3 },
+const item = {
+  hidden: { opacity: 0, y: 24, filter: 'blur(8px)' },
+  show: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.8, ease: EASE } },
 };
+
+const wordGroup = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.09 } },
+};
+
+const word = {
+  hidden: { opacity: 0, y: '0.4em', filter: 'blur(6px)' },
+  show: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.7, ease: EASE } },
+};
+
+const headlineWords = ['L’expertise', 'au', 'service', 'de', 'votre'];
 
 export default function Hero() {
   return (
@@ -48,22 +58,40 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-[1280px] mx-auto px-6 min-h-screen flex items-center">
         <div className="w-full">
-          <motion.div className="max-w-3xl" {...fadeUp}>
-            <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">
-              Audit & Conseil
-            </span>
-            <h1 className="font-serif text-5xl sm:text-6xl lg:text-[72px] leading-[1.08] text-white mt-8 tracking-tight">
-              L&apos;expertise au service de votre{' '}
-              <span className="italic text-accent">performance</span>
-            </h1>
-            <p className="text-white/75 text-base sm:text-lg mt-6 max-w-xl leading-relaxed">
-              Cabinet Mourad Guellaty (MG & Associés) accompagne les entreprises à chaque étape
+          <motion.div className="max-w-3xl" variants={container} initial="hidden" animate="show">
+            <motion.span
+              variants={item}
+              className="block text-accent text-xs font-semibold tracking-[0.18em] uppercase"
+            >
+              Audit &amp; Conseil
+            </motion.span>
+
+            <motion.h1
+              variants={wordGroup}
+              className="font-serif text-5xl sm:text-6xl lg:text-[72px] leading-[1.08] text-white mt-8 tracking-tight"
+            >
+              {headlineWords.map((w, i) => (
+                <motion.span key={i} variants={word} className="inline-block mr-[0.28em]">
+                  {w}
+                </motion.span>
+              ))}
+              <motion.span variants={word} className="inline-block italic text-accent">
+                performance
+              </motion.span>
+            </motion.h1>
+
+            <motion.p
+              variants={item}
+              className="text-white/75 text-base sm:text-lg mt-6 max-w-xl leading-relaxed"
+            >
+              Cabinet Mourad Guellaty (MG &amp; Associés) accompagne les entreprises à chaque étape
               de leur développement avec rigueur, indépendance et engagement.
-            </p>
-            <div className="flex flex-wrap gap-4 mt-10">
+            </motion.p>
+
+            <motion.div variants={item} className="flex flex-wrap gap-4 mt-10">
               <a
                 href="#services"
-                className="inline-flex items-center gap-3 bg-accent text-white px-8 py-4 text-sm font-semibold tracking-wider uppercase hover:bg-accent/90 transition-all duration-300 group"
+                className="inline-flex items-center gap-3 bg-accent text-white px-8 py-4 text-sm font-semibold tracking-wider uppercase hover:bg-accent/90 hover:-translate-y-0.5 hover:shadow-[0_12px_34px_-10px_rgba(168,24,40,0.6)] transition-all duration-300 group"
               >
                 Découvrir nos services
                 <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
@@ -74,10 +102,29 @@ export default function Hero() {
               >
                 En savoir plus
               </a>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
+
+      {/* scroll cue */}
+      <motion.a
+        href="#fondateur"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3 text-white/60 hover:text-white transition-colors"
+        aria-label="Défiler vers le bas"
+      >
+        <span className="text-[10px] tracking-[0.25em] uppercase">Défiler</span>
+        <span className="relative block w-px h-9 bg-white/25 overflow-hidden">
+          <motion.span
+            className="absolute inset-x-0 top-0 h-3 bg-white/90"
+            animate={{ y: [-12, 36] }}
+            transition={{ duration: 1.7, repeat: Infinity, ease: 'easeInOut' }}
+          />
+        </span>
+      </motion.a>
     </section>
   );
 }

@@ -11,9 +11,12 @@ const fadeUp = {
 
 type Member = { name: string; role: string; photo?: string; initials?: string };
 
-// Founder — apex of the pyramid. Add his portrait at /cabinet/Mourad-Guellaty.jpg
-// and set `photo` below; until then the MG monogram shows.
-const founder: Member = { name: 'Mourad Guellaty', role: 'Fondateur', initials: 'MG' };
+const founder: Member = {
+  name: 'Mourad Guellaty',
+  role: 'Fondateur',
+  initials: 'MG',
+  photo: '/cabinet/Mourad-Guellaty.jpg',
+};
 
 // Managers. NOTE: roles default to "Manager" (per the brief) — replace each
 // with the person's exact title when confirmed. Reorder the tiers to reflect
@@ -26,8 +29,11 @@ const tier2: Member[] = [
 const tier3: Member[] = [
   { name: 'Hafedh Kharrat', role: 'Manager', photo: '/cabinet/Hafedh-kharrat.jpeg' },
   { name: 'Salem Ben Salah', role: 'Manager', photo: '/cabinet/Salem_Ben_Salah.jpeg' },
+  { name: 'Haythem Belhadj', role: 'Manager', photo: '/cabinet/Haythem_belhadj.png' },
   { name: 'Sofiene Dahbi', role: 'Manager', photo: '/cabinet/Dahbi_Sofiene.jpeg' },
 ];
+
+const allMembers: Member[] = [...tier2, ...tier3];
 
 function Avatar({ m, size, delay = 0 }: { m: Member; size: 'lg' | 'md'; delay?: number }) {
   const isFounder = m.role === 'Fondateur';
@@ -97,16 +103,22 @@ export default function Team() {
 
         {/* ── Team Grid ────────────────────────────────────────────────── */}
         <div className="flex flex-col items-center mt-20 lg:mt-24">
-          {/* row 1 — founder + Walid Moussa */}
-          <div className="flex flex-wrap justify-center gap-x-16 lg:gap-x-28 gap-y-12">
+          {/* row 1 — founder alone */}
+          <div className="flex justify-center">
             <Avatar m={founder} size="lg" />
-            <Avatar m={tier2.find(m => m.name === 'Walid Moussa')!} size="md" delay={0.1} />
           </div>
 
-          {/* row 2 — the rest */}
-          <div className="flex flex-wrap justify-center gap-x-10 lg:gap-x-16 gap-y-12 mt-12 lg:mt-16">
-            {[...tier2.filter(m => m.name !== 'Walid Moussa'), ...tier3].map((m, i) => (
+          {/* row 2 — 3 members */}
+          <div className="flex flex-wrap justify-center gap-x-10 lg:gap-x-16 gap-y-12 mt-16">
+            {allMembers.slice(0, 3).map((m, i) => (
               <Avatar key={m.name} m={m} size="md" delay={i * 0.1} />
+            ))}
+          </div>
+
+          {/* row 3 — 3 members */}
+          <div className="flex flex-wrap justify-center gap-x-10 lg:gap-x-16 gap-y-12 mt-12">
+            {allMembers.slice(3, 6).map((m, i) => (
+              <Avatar key={m.name} m={m} size="md" delay={(i + 3) * 0.1} />
             ))}
           </div>
         </div>

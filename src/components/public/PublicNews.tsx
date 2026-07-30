@@ -2,11 +2,16 @@ import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
 
 export default async function PublicNews() {
-  const articles = await prisma.news.findMany({
-    where: { published: true },
-    orderBy: { publishedAt: 'desc' },
-    take: 3,
-  });
+  let articles: Awaited<ReturnType<typeof prisma.news.findMany>> = [];
+  try {
+    articles = await prisma.news.findMany({
+      where: { published: true },
+      orderBy: { publishedAt: 'desc' },
+      take: 3,
+    });
+  } catch {
+    // DB unavailable during build — skip news section
+  }
 
   if (articles.length === 0) return null;
 

@@ -2,10 +2,15 @@ import { prisma } from '@/lib/prisma';
 import { Briefcase, MapPin, ArrowRight } from 'lucide-react';
 
 export default async function Careers() {
-  const jobs = await prisma.job.findMany({
-    where: { published: true },
-    orderBy: { createdAt: 'desc' },
-  });
+  let jobs: Awaited<ReturnType<typeof prisma.job.findMany>> = [];
+  try {
+    jobs = await prisma.job.findMany({
+      where: { published: true },
+      orderBy: { createdAt: 'desc' },
+    });
+  } catch {
+    // DB unavailable during build — skip careers section
+  }
 
   if (jobs.length === 0) return null;
 

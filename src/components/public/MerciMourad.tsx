@@ -35,15 +35,9 @@ function Presentation() {
           <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 w-[118%] max-w-none aspect-square rounded-full border border-gold/20 -z-10" />
           <div className="absolute inset-x-3 top-2 bottom-0 rounded-t-full bg-[#EFE6D4]/70 -z-10" />
           <div className="absolute inset-0 rounded-t-full overflow-hidden shadow-soft-lg ring-1 ring-black/[0.04]">
-            <div className="absolute inset-0 bg-gradient-to-b from-[#E9DFCB] to-[#D8C9AC]" />
-            <div className="absolute inset-0 bg-[radial-gradient(80%_50%_at_50%_16%,rgba(255,255,255,0.55)_0%,transparent_70%)]" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center px-6 select-none">
-              <span className="font-serif leading-none text-[#A98C5B]/50 text-[64px] lg:text-[80px]">MG</span>
-              <span className="w-10 h-px bg-gold/50" />
-              <span className="text-[10px] tracking-[0.3em] uppercase text-[#8A7550]/80">Mourad Guellaty</span>
-            </div>
-            {/* Real portrait: add public/founder.jpg and restore a div with
-                backgroundImage: 'url(/founder.jpg)' here. */}
+            <div className="absolute inset-0 bg-cover bg-top grayscale-[0.35] sepia-[0.10] contrast-[1.02] brightness-[1.01]"
+              style={{ backgroundImage: 'url(/cabinet/Mourad-Guellaty.jpg)' }} />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#2a2620]/20 via-transparent to-[#f2ede3]/10 mix-blend-multiply opacity-60" />
           </div>
         </div>
       </div>

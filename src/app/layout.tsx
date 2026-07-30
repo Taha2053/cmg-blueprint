@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     description: 'Audit, conseil fiscal et expertise comptable à La Marsa, Tunis.',
     images: ['/og-image.jpg'],
   },
-  icons: { icon: '/favicon.svg' },
+  icons: { icon: '/favicon.ico' },
 };
 
 const jsonLd = {

@@ -102,7 +102,7 @@ export default function Societies() {
       >
         <div
           className="flex items-center gap-14 hover:[animation-play-state:paused]"
-          style={{ animation: 'marquee 45s linear infinite' }}
+          style={{ animation: 'marquee 15s linear infinite' }}
         >
           {[...logos, ...logos].map((src, i) => (
             <div

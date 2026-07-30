@@ -3,12 +3,20 @@
 import { motion } from 'framer-motion';
 
 const secteurs = [
-  { title: 'Services & Finance', desc: 'Banques, assurances, sociétés de services et institutions financières.', img: '/images/secteurs/finance.jpg' },
-  { title: 'Industrie & Manufacture', desc: 'Industries manufacturières, agroalimentaires et unités de production.', img: '/images/secteurs/industrie.jpg' },
-  { title: 'Santé & Pharmacie', desc: 'Cliniques, laboratoires, pharmacies et établissements de santé.', img: '/images/secteurs/sante.jpg' },
-  { title: 'Éducation & Formation', desc: 'Institutions académiques, centres de formation et organismes éducatifs.', img: '/images/secteurs/education.jpg' },
-  { title: 'Transport & Logistique', desc: 'Transport maritime, aérien, terrestre et chaînes logistiques.', img: '/images/secteurs/transport.jpg' },
-  { title: 'Immobilier & BTP', desc: 'Promotion immobilière, construction, et aménagement urbain.', img: '/images/secteurs/immobilier.jpg' },
+  { title: 'Banques et institutions financières', desc: 'Banques, assurances, sociétés de services et institutions financières.', img: '/images/secteurs/banques.jpg' },
+  { title: 'Industrie agroalimentaire', desc: 'Industries agroalimentaires et unités de production.', img: '/images/secteurs/agroalimentaire.jpg' },
+  { title: 'Secteur agricole', desc: 'Exploitations agricoles et filières agro-industrielles.', img: '/images/secteurs/agricole.jpg' },
+  { title: 'Industrie chimique', desc: 'Industries chimiques et unités de transformation.', img: '/images/secteurs/chimique.jpg' },
+  { title: 'Industrie pharmaceutique', desc: 'Laboratoires pharmaceutiques et établissements de santé.', img: '/images/secteurs/pharmaceutique.jpg' },
+  { title: 'Cisternes, bâtiments et travaux publics', desc: 'Construction, BTP et aménagement urbain.', img: '/images/secteurs/btp.jpg' },
+  { title: 'Secteur hôtelier', desc: 'Hôtels, resorts et établissements touristiques.', img: '/images/secteurs/hotelier.jpg' },
+  { title: 'Secteur commercial', desc: 'Grande distribution, commerces et surfaces de vente.', img: '/images/secteurs/commercial.jpg' },
+  { title: 'Industrie mécanique', desc: 'Industries mécaniques et unités de fabrication.', img: '/images/secteurs/mecanique.jpg' },
+  { title: 'Cliniques', desc: 'Cliniques, laboratoires et établissements de soins.', img: '/images/secteurs/cliniques.jpg' },
+  { title: 'Secteur de télécommunication', desc: 'Télécommunications et technologies de l\'information.', img: '/images/secteurs/telecom.jpg' },
+  { title: 'Secteur pétrolier', desc: 'Industrie pétrolière, raffinage et distribution.', img: '/images/secteurs/petrolier.jpg' },
+  { title: 'Promotion immobilière', desc: 'Promotion immobilière et développement foncier.', img: '/images/secteurs/immobiliere.jpg' },
+  { title: 'Industrie d\'hygiène', desc: 'Produits d\'hygiène, cosmétiques et détergents.', img: '/images/secteurs/hygiene.jpg' },
 ];
 
 const fadeUp = {

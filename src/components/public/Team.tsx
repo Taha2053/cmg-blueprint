@@ -20,16 +20,16 @@ const founder: Member = {
 
 const walid: Member = {
   name: 'Walid Moussa',
-  role: 'Manager',
+  role: 'Manager Partner',
   photo: '/cabinet/Walid-Moussa.jpeg',
 };
 
 const rest: Member[] = [
-  { name: 'Ayman El Euch', role: 'Manager', photo: '/cabinet/Ayman-El-Euch.png' },
-  { name: 'Hafedh Kharrat', role: 'Manager', photo: '/cabinet/Hafedh-kharrat.png' },
-  { name: 'Salem Ben Salah', role: 'Manager', photo: '/cabinet/Salem_Ben_Salah.png' },
   { name: 'Haythem Belhadj', role: 'Manager', photo: '/cabinet/Haythem_belhadj.png' },
+  { name: 'Salem Ben Salah', role: 'Manager', photo: '/cabinet/Salem_Ben_Salah.png' },
   { name: 'Sofiene Dahbi', role: 'Manager', photo: '/cabinet/Dahbi_Sofiene.png' },
+  { name: 'Hafedh Kharrat', role: 'Manager', photo: '/cabinet/Hafedh-kharrat.png' },
+  { name: 'Ayman El Euch', role: 'Manager', photo: '/cabinet/Ayman-El-Euch.png' },
 ];
 
 function Avatar({ m, size, delay = 0 }: { m: Member; size: 'lg' | 'md'; delay?: number }) {

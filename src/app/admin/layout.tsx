@@ -9,6 +9,7 @@ import {
   Briefcase,
   Users,
   Mail,
+  FileText,
   LogOut,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -16,6 +17,7 @@ import { cn } from '@/lib/utils';
 const sidebarItems = [
   { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
   { label: 'News', href: '/admin/news', icon: Newspaper },
+  { label: 'Articles', href: '/admin/articles', icon: FileText },
   { label: 'Careers', href: '/admin/careers', icon: Briefcase },
   { label: 'Subscribers', href: '/admin/subscribers', icon: Users },
   { label: 'Messages', href: '/admin/messages', icon: Mail },

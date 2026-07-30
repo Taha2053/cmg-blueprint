@@ -8,6 +8,7 @@ import Services from '@/components/public/Services';
 import Secteurs from '@/components/public/Secteurs';
 import Team from '@/components/public/Team';
 import PublicNews from '@/components/public/PublicNews';
+import Articles from '@/components/public/Articles';
 import Careers from '@/components/public/Careers';
 import Contact from '@/components/public/Contact';
 import NewsletterSection from '@/components/public/NewsletterSection';
@@ -30,6 +31,7 @@ export default function Home() {
         <Secteurs />
         <Team />
         <PublicNews />
+        <Articles />
         <Careers />
         <Contact />
         <NewsletterSection />

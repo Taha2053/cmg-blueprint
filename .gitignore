@@ -12,6 +12,26 @@ node_modules
 *.local
 .env
 
+# Old Vite build artifacts
+dist/
+cmg-website/dist/
+
+# Duplicate project copy (Vite old version)
+cmg-website/
+
+# Design inspo / temp / unrelated
+inspirations/
+Automation-of-the-workflow/
+footer-*.txt
+
+# Build artifacts
+tsconfig.tsbuildinfo
+next-env.d.ts
+
+# Docs (keep in GitHub wiki or similar)
+DESIGN_SYSTEM.md
+README.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

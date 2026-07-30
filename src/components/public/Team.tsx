@@ -50,21 +50,15 @@ function Avatar({ m, size, delay = 0 }: { m: Member; size: 'lg' | 'md'; delay?: 
         }`}
       >
         {m.photo ? (
-          <>
-            <div
-              className="absolute inset-0 bg-cover bg-top grayscale-[0.45] sepia-[0.12] contrast-[1.03] brightness-[1.01] group-hover:grayscale-0 group-hover:sepia-0 transition-all duration-700 group-hover:scale-105"
-              style={{ backgroundImage: `url(${m.photo})` }}
-            />
-            {/* uniform warm overlay — evens out the different source backgrounds */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#2a2620]/25 via-transparent to-[#f2ede3]/10 mix-blend-multiply opacity-70 group-hover:opacity-40 transition-opacity duration-500" />
-          </>
+          <div
+            className="absolute inset-0 bg-cover bg-top group-hover:scale-105 transition-transform duration-700"
+            style={{ backgroundImage: `url(${m.photo})` }}
+          />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#E9DFCB] to-[#D8C9AC]">
             <span className="font-serif text-6xl text-[#A98C5B]/60 select-none">{m.initials}</span>
           </div>
         )}
-        {/* subtle bottom gradient for depth */}
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent" />
       </div>
       <h3 className="font-serif text-lg lg:text-xl text-text-dark mt-4 group-hover:text-accent transition-colors">
         {m.name}

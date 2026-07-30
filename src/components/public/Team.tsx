@@ -20,7 +20,7 @@ const founder: Member = {
 
 const walid: Member = {
   name: 'Walid Moussa',
-  role: 'Manager Partner',
+  role: 'Managing Partner',
   photo: '/cabinet/Walid-Moussa.jpeg',
 };
 

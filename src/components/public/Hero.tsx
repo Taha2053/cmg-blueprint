@@ -32,7 +32,7 @@ export default function Hero() {
       <div className="absolute inset-0 overflow-hidden hero-video-wrapper">
         <video
           className="absolute inset-0 h-full w-full object-cover saturate-50 brightness-[0.72] contrast-[1.05] hero-video"
-          src="/table.mp4"
+          src="/hero-video.mp4"
           poster="/hero-poster.jpg"
           autoPlay
           muted

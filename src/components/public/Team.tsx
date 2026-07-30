@@ -15,25 +15,22 @@ const founder: Member = {
   name: 'Mourad Guellaty',
   role: 'Fondateur',
   initials: 'MG',
-  photo: '/cabinet/Mourad-Guellaty.jpg',
+  photo: '/cabinet/Mourad-Guellaty.png',
 };
 
-// Managers. NOTE: roles default to "Manager" (per the brief) — replace each
-// with the person's exact title when confirmed. Reorder the tiers to reflect
-// real seniority if needed.
-const tier2: Member[] = [
-  { name: 'Ayman El Euch', role: 'Manager', photo: '/cabinet/Ayman-El-Euch.jpg' },
-  { name: 'Walid Moussa', role: 'Manager', photo: '/cabinet/Walid-Moussa.jpeg' },
-];
+const walid: Member = {
+  name: 'Walid Moussa',
+  role: 'Manager',
+  photo: '/cabinet/Walid-Moussa.jpeg',
+};
 
-const tier3: Member[] = [
-  { name: 'Hafedh Kharrat', role: 'Manager', photo: '/cabinet/Hafedh-kharrat.jpeg' },
-  { name: 'Salem Ben Salah', role: 'Manager', photo: '/cabinet/Salem_Ben_Salah.jpeg' },
+const rest: Member[] = [
+  { name: 'Ayman El Euch', role: 'Manager', photo: '/cabinet/Ayman-El-Euch.png' },
+  { name: 'Hafedh Kharrat', role: 'Manager', photo: '/cabinet/Hafedh-kharrat.png' },
+  { name: 'Salem Ben Salah', role: 'Manager', photo: '/cabinet/Salem_Ben_Salah.png' },
   { name: 'Haythem Belhadj', role: 'Manager', photo: '/cabinet/Haythem_belhadj.png' },
-  { name: 'Sofiene Dahbi', role: 'Manager', photo: '/cabinet/Dahbi_Sofiene.jpeg' },
+  { name: 'Sofiene Dahbi', role: 'Manager', photo: '/cabinet/Dahbi_Sofiene.png' },
 ];
-
-const allMembers: Member[] = [...tier2, ...tier3];
 
 function Avatar({ m, size, delay = 0 }: { m: Member; size: 'lg' | 'md'; delay?: number }) {
   const isFounder = m.role === 'Fondateur';
@@ -103,22 +100,16 @@ export default function Team() {
 
         {/* ── Team Grid ────────────────────────────────────────────────── */}
         <div className="flex flex-col items-center mt-20 lg:mt-24">
-          {/* row 1 — founder alone */}
-          <div className="flex justify-center">
+          {/* row 1 — founder + Walid */}
+          <div className="flex justify-center items-end gap-8 lg:gap-12">
             <Avatar m={founder} size="lg" />
+            <Avatar m={walid} size="lg" delay={0.15} />
           </div>
 
-          {/* row 2 — 3 members */}
-          <div className="flex flex-wrap justify-center gap-x-10 lg:gap-x-16 gap-y-12 mt-16">
-            {allMembers.slice(0, 3).map((m, i) => (
-              <Avatar key={m.name} m={m} size="md" delay={i * 0.1} />
-            ))}
-          </div>
-
-          {/* row 3 — 3 members */}
-          <div className="flex flex-wrap justify-center gap-x-10 lg:gap-x-16 gap-y-12 mt-12">
-            {allMembers.slice(3, 6).map((m, i) => (
-              <Avatar key={m.name} m={m} size="md" delay={(i + 3) * 0.1} />
+          {/* row 2 — rest in one line */}
+          <div className="flex flex-wrap justify-center gap-x-8 lg:gap-x-12 gap-y-12 mt-14">
+            {rest.map((m, i) => (
+              <Avatar key={m.name} m={m} size="md" delay={(i + 1) * 0.1} />
             ))}
           </div>
         </div>

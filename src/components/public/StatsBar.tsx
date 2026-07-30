@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const stats = [
-  { number: '15+', label: "Années d'expérience" },
+  { number: '30+', label: "Années d'expérience" },
   { number: '200+', label: 'Clients accompagnés' },
   { number: '40+', label: 'Experts à votre service' },
   { number: '100%', label: 'Engagement qualité' },

@@ -36,7 +36,7 @@ function Presentation() {
           <div className="absolute inset-x-3 top-2 bottom-0 rounded-t-full bg-[#EFE6D4]/70 -z-10" />
           <div className="absolute inset-0 rounded-t-full overflow-hidden shadow-soft-lg ring-1 ring-black/[0.04]">
             <div className="absolute inset-0 bg-cover bg-top grayscale-[0.35] sepia-[0.10] contrast-[1.02] brightness-[1.01]"
-              style={{ backgroundImage: 'url(/cabinet/Mourad-Guellaty.jpg)' }} />
+              style={{ backgroundImage: 'url(/cabinet/Mourad-Guellaty.png)' }} />
             <div className="absolute inset-0 bg-gradient-to-t from-[#2a2620]/20 via-transparent to-[#f2ede3]/10 mix-blend-multiply opacity-60" />
           </div>
         </div>

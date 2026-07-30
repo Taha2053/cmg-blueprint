@@ -107,12 +107,12 @@ export default function Societies() {
           {[...logos, ...logos].map((src, i) => (
             <div
               key={i}
-              className="inline-flex items-center justify-center h-16 w-36 shrink-0"
+              className="inline-flex items-center justify-center h-20 w-48 shrink-0"
             >
               <img
                 src={`/logos/${encodeURI(src)}`}
                 alt=""
-                className="max-h-full max-w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                className="max-h-full max-w-full object-contain opacity-80 hover:opacity-100 transition-all duration-500"
               />
             </div>
           ))}

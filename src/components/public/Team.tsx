@@ -101,7 +101,7 @@ export default function Team() {
           </div>
 
           {/* row 2 — rest in one line */}
-          <div className="flex flex-wrap justify-center gap-x-8 lg:gap-x-12 gap-y-12 mt-14">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 justify-items-center mt-14">
             {rest.map((m, i) => (
               <Avatar key={m.name} m={m} size="md" delay={(i + 1) * 0.1} />
             ))}

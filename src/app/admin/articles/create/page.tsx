@@ -6,20 +6,25 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import FileDropzone from '@/components/admin/FileDropzone';
 import { createArticle } from '@/actions/articles';
 
 export default function CreateArticle() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [pdfUrl, setPdfUrl] = useState('');
+  const [coverImage, setCoverImage] = useState('');
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
 
-    const formData = new FormData(e.currentTarget);
+    const fd = new FormData(e.currentTarget);
+    if (pdfUrl) fd.set('pdfUrl', pdfUrl);
+    if (coverImage) fd.set('coverImage', coverImage);
 
     try {
-      await createArticle(formData);
+      await createArticle(fd);
       router.push('/admin/articles');
       router.refresh();
     } catch {
@@ -40,12 +45,12 @@ export default function CreateArticle() {
           <Textarea id="subtitle" name="subtitle" placeholder="Brève description..." />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="coverImage">URL de l'image de couverture</Label>
-          <Input id="coverImage" name="coverImage" placeholder="https://..." />
+          <Label>Image de couverture</Label>
+          <FileDropzone value={coverImage} onChange={setCoverImage} type="image" accept=".jpg,.jpeg,.png,.webp,.gif" />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="pdfUrl">URL du PDF</Label>
-          <Input id="pdfUrl" name="pdfUrl" placeholder="/Articles/..." />
+          <Label>Fichier PDF</Label>
+          <FileDropzone value={pdfUrl} onChange={setPdfUrl} type="pdf" accept=".pdf" />
         </div>
         <div className="flex items-center gap-4">
           <label className="flex items-center gap-2 text-sm text-text-muted">

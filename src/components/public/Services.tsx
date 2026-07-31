@@ -1,16 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ShieldCheck, Calculator, LineChart, Scale, TrendingUp, Handshake } from 'lucide-react';
-
-const services = [
-  { icon: ShieldCheck, title: 'Audit légal', desc: 'Commissariat aux comptes et audit légal dans le respect des normes en vigueur.' },
-  { icon: Calculator, title: 'Conseil fiscal', desc: "Optimisation fiscale, déclarations et assistance dans vos relations avec l'administration." },
-  { icon: LineChart, title: 'Expertise comptable', desc: 'Tenue et révision comptable, états financiers et reporting fiable pour une meilleure prise de décision.' },
-  { icon: Scale, title: 'Conseil juridique', desc: 'Accompagnement juridique des entreprises et sécurisation de vos opérations.' },
-  { icon: TrendingUp, title: 'Conseil en gestion', desc: 'Analyse financière, tableaux de bord et accompagnement à la performance.' },
-  { icon: Handshake, title: 'Transactions & due diligence', desc: "Évaluation, audit d'acquisition et accompagnement dans vos opérations stratégiques." },
-];
+import Link from 'next/link';
+import { services } from '@/lib/services';
 
 const fadeUp = {
   initial: { opacity: 0, y: 40, filter: 'blur(6px)' },
@@ -31,23 +23,26 @@ export default function Services() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {services.map((s, i) => {
             const Icon = s.icon;
             return (
               <motion.div
                 key={i}
-                className="surface mirror shadow-soft p-10 flex flex-col items-center text-center group hover:shadow-soft-lg hover:border-accent/30 hover:-translate-y-1 transition-all duration-300"
+                className="surface mirror shadow-soft p-8 lg:p-10 flex flex-col items-center text-center group hover:shadow-soft-lg hover:border-accent/30 hover:-translate-y-1 transition-all duration-300"
                 {...fadeUp}
               >
                 <Icon size={42} className="text-accent mb-6" strokeWidth={1.5} />
-                <h3 className="font-serif text-xl text-text-dark mb-4">{s.title}</h3>
+                <h3 className="font-serif text-lg lg:text-xl text-text-dark mb-4">{s.title}</h3>
                 <p className="text-text-dark-muted text-sm leading-relaxed mb-8 flex-1">
                   {s.desc}
                 </p>
-                <a href="#contact" className="text-text-dark-muted hover:text-accent text-xs font-bold tracking-[0.25em] uppercase transition-colors flex items-center gap-2">
+                <Link
+                  href={`/services/${s.slug}`}
+                  className="text-text-dark-muted hover:text-accent text-xs font-bold tracking-[0.25em] uppercase transition-colors flex items-center gap-2"
+                >
                   EN SAVOIR PLUS <span className="text-accent">&rarr;</span>
-                </a>
+                </Link>
               </motion.div>
             );
           })}

@@ -1,27 +1,29 @@
 'use client';
 
 import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Lenis from 'lenis';
 
 /**
- * Extra vertical shift (px) applied after centering, keyed by section id.
- * Positive pushes the section higher in the viewport (reveals more below).
+ * Height of the fixed header (px). Nav clicks land the section title
+ * just below it, with a small breathing gap.
  */
-const sectionShift: Record<string, number> = {
-  fondateur: -75,
-  about: -50,
-  services: 100,
-  team: -40,
-  news: -40,
+const HEADER_HEIGHT = 100;
+
+/**
+ * In-page anchors that should scroll to the very top of the page
+ * (hero / accueil) rather than to a heading.
+ */
+const scrollToTop: Record<string, boolean> = {
+  accueil: true,
 };
 
 /**
- * Sections that should land at their top (just below the fixed header)
- * instead of being centered in the viewport.
+ * Extra breathing room (px) added on top of the base gap for these sections.
  */
-const sectionAlignTop: Record<string, boolean> = {
-  sectors: true,
-  articles: true,
+const extraGap: Record<string, number> = {
+  team: 10,
+  contact: 10,
 };
 
 /**
@@ -30,6 +32,8 @@ const sectionAlignTop: Record<string, boolean> = {
  * Fully disabled when the visitor prefers reduced motion.
  */
 export default function SmoothScroll() {
+  const router = useRouter();
+
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
@@ -39,7 +43,20 @@ export default function SmoothScroll() {
       smoothWheel: true,
     });
 
-    // ease in-page anchor clicks, offset for the fixed header
+    function scrollToId(id: string) {
+      const key = id.slice(1);
+      if (scrollToTop[key]) {
+        lenis.scrollTo(0);
+        return;
+      }
+      const target = document.querySelector(id);
+      if (!target) return;
+      const title = target.querySelector('h1, h2') ?? target;
+      const rect = title.getBoundingClientRect();
+      lenis.scrollTo(Math.max(0, rect.top + window.scrollY - HEADER_HEIGHT - 20 - (extraGap[key] ?? 0)));
+    }
+
+    // ease anchor clicks, offset for the fixed header
     function onClick(e: MouseEvent) {
       const anchor = (e.target as HTMLElement)?.closest?.(
         'a[href*="#"]'
@@ -47,22 +64,29 @@ export default function SmoothScroll() {
       if (!anchor) return;
 
       const url = new URL(anchor.href, window.location.href);
-      if (url.pathname !== window.location.pathname) return; // let cross-page nav happen
       const id = url.hash;
       if (!id || id === '#') return;
 
-      const target = document.querySelector(id);
-      if (!target) return;
-
       e.preventDefault();
-      const rect = target.getBoundingClientRect();
-      const key = id.slice(1);
-      const shift = sectionShift[key] ?? 0;
-      const targetScroll = sectionAlignTop[key]
-        ? rect.top + window.scrollY - 96 + shift
-        : rect.top + window.scrollY + rect.height / 2 - window.innerHeight / 2 + shift;
-      lenis.scrollTo(Math.max(0, targetScroll));
-      history.pushState(null, '', id);
+
+      if (url.pathname === window.location.pathname) {
+        scrollToId(id);
+        history.pushState(null, '', id);
+        return;
+      }
+
+      // cross-page: navigate first, then scroll once the section exists
+      router.push(url.pathname + url.hash);
+      let frames = 0;
+      const scrollAfterNav = () => {
+        if (frames++ > 60) return;
+        if (document.querySelector(id)) {
+          scrollToId(id);
+          return;
+        }
+        requestAnimationFrame(scrollAfterNav);
+      };
+      requestAnimationFrame(scrollAfterNav);
     }
     document.addEventListener('click', onClick);
 
@@ -78,7 +102,7 @@ export default function SmoothScroll() {
       document.removeEventListener('click', onClick);
       lenis.destroy();
     };
-  }, []);
+  }, [router]);
 
   return null;
 }

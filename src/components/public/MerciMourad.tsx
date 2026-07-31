@@ -62,7 +62,7 @@ function Presentation() {
         <div className="grid sm:grid-cols-2 gap-8 mt-8">
           <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
             Mourad Guellaty a consacré sa vie à l’expertise comptable et à l’audit en Tunisie.
-            Ancien président de l’Ordre des Experts Comptables de Tunisie, il a porté la voix de la
+            Ancien et premier président de l’Ordre des Experts Comptables de Tunisie, il a porté la voix de la
             profession avec <span className="text-text-dark font-medium">indépendance</span> et{' '}
             <span className="text-text-dark font-medium">engagement</span>.
           </p>

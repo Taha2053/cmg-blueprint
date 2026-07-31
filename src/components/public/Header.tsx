@@ -62,12 +62,12 @@ export default function Header() {
           : 'bg-white/75 backdrop-blur-lg border-black/5'
       }`}
     >
-      <div className="hidden lg:block border-b border-black/10">
-        <div className="max-w-[1280px] mx-auto px-6 py-2 flex justify-end items-center gap-6 text-[11px] uppercase tracking-[0.15em] text-text-dark-muted">
-          <a href="tel:+21671740131" className="flex items-center gap-2 hover:text-text-dark transition-colors">
+      <div className="hidden lg:block bg-accent">
+        <div className="max-w-[1280px] mx-auto px-6 py-2 flex justify-end items-center gap-6 text-[11px] uppercase tracking-[0.15em] text-white">
+          <a href="tel:+21671740131" className="flex items-center gap-2 hover:text-white/80 transition-colors">
             <Phone size={11} /> +216 71 740 131
           </a>
-          <a href="mailto:contact@cabinetguellaty.com" className="flex items-center gap-2 hover:text-text-dark transition-colors">
+          <a href="mailto:contact@cabinetguellaty.com" className="flex items-center gap-2 hover:text-white/80 transition-colors">
             <Mail size={11} /> contact@cabinetguellaty.com
           </a>
         </div>

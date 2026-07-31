@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: '%s | MG & Associés',
   },
   description:
-    'Cabinet Mourad Guellaty (MG & Associés) — audit légal, commissariat aux comptes, conseil fiscal et expertise comptable à La Marsa, Tunis. Fondé par Mourad Guellaty, ancien président de l’Ordre des Experts Comptables de Tunisie.',
+    'Cabinet Mourad Guellaty (MG & Associés) — audit légal, commissariat aux comptes, conseil fiscal et expertise comptable à La Marsa, Tunis. Fondé par Mourad Guellaty, ancien et premier président de l’Ordre des Experts Comptables de Tunisie.',
   keywords: [
     'audit Tunisie',
     'expertise comptable Tunis',

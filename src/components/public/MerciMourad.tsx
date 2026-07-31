@@ -35,7 +35,7 @@ function Presentation() {
           <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 w-[118%] max-w-none aspect-square rounded-full border border-gold/20 -z-10" />
           <div className="absolute inset-x-3 top-2 bottom-0 rounded-t-full bg-[#F2F2F2]/70 -z-10" />
           <div className="absolute inset-0 rounded-t-full overflow-hidden shadow-soft-lg ring-1 ring-black/[0.04]">
-            <div className="absolute inset-0 bg-cover bg-top"
+            <div className="absolute inset-0 bg-cover bg-[position:50%_8%]"
               style={{ backgroundImage: 'url(/cabinet/Mourad-Guellaty.png)' }} />
           </div>
         </div>

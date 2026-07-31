@@ -12,7 +12,6 @@ const navLinks = [
   { label: 'SERVICES', href: '/#services', sectionId: 'services' },
   { label: 'SECTEURS', href: '/#sectors', sectionId: 'sectors' },
   { label: 'ÉQUIPE', href: '/#team', sectionId: 'team' },
-  { label: 'ACTUALITÉS', href: '/#news', sectionId: 'news' },
   { label: 'ARTICLES', href: '/#articles', sectionId: 'articles' },
   { label: 'CARRIÈRES', href: '/#careers', sectionId: 'careers' },
   { label: 'CONTACT', href: '/#contact', sectionId: 'contact' },

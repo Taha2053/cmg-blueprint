@@ -4,6 +4,27 @@ import { useEffect } from 'react';
 import Lenis from 'lenis';
 
 /**
+ * Extra vertical shift (px) applied after centering, keyed by section id.
+ * Positive pushes the section higher in the viewport (reveals more below).
+ */
+const sectionShift: Record<string, number> = {
+  fondateur: -75,
+  about: -50,
+  services: 100,
+  team: -40,
+  news: -40,
+};
+
+/**
+ * Sections that should land at their top (just below the fixed header)
+ * instead of being centered in the viewport.
+ */
+const sectionAlignTop: Record<string, boolean> = {
+  sectors: true,
+  articles: true,
+};
+
+/**
  * Momentum smooth-scrolling (Lenis). Also upgrades in-page anchor links to
  * ease to their target with an offset that clears the fixed header.
  * Fully disabled when the visitor prefers reduced motion.
@@ -35,7 +56,11 @@ export default function SmoothScroll() {
 
       e.preventDefault();
       const rect = target.getBoundingClientRect();
-      const targetScroll = rect.top + window.scrollY + rect.height / 2 - window.innerHeight / 2;
+      const key = id.slice(1);
+      const shift = sectionShift[key] ?? 0;
+      const targetScroll = sectionAlignTop[key]
+        ? rect.top + window.scrollY - 96 + shift
+        : rect.top + window.scrollY + rect.height / 2 - window.innerHeight / 2 + shift;
       lenis.scrollTo(Math.max(0, targetScroll));
       history.pushState(null, '', id);
     }

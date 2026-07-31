@@ -84,7 +84,7 @@ export default function Hero() {
               variants={item}
               className="text-white/75 text-base sm:text-lg mt-6 max-w-xl leading-relaxed"
             >
-              Cabinet Mourad Guellaty (MG &amp; Associés) accompagne les entreprises à chaque étape
+              Cabinet Mourad Guellaty accompagne les entreprises à chaque étape
               de leur développement avec rigueur, indépendance et engagement.
             </motion.p>
 

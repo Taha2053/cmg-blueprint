@@ -57,22 +57,22 @@
   /* Ivory — the light sections. */
   .bg-ivoire {
     background:
-      radial-gradient(85% 55% at 50% 0%, rgba(255, 255, 255, 0.75) 0%, transparent 62%),
-      linear-gradient(180deg, #F8F5EE 0%, #F2EDE3 55%, #E9E3D6 100%);
+      radial-gradient(85% 55% at 50% 0%, rgba(255, 255, 255, 0.90) 0%, transparent 62%),
+      linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 55%, #F4F4F4 100%);
   }
 
-  /* Warm grey — the panels that replaced the former black sections. */
+  /* Light grey — the panels that replaced the former black sections. */
   .bg-gris {
     background:
-      radial-gradient(90% 60% at 50% 0%, rgba(255, 255, 255, 0.60) 0%, transparent 62%),
-      linear-gradient(180deg, #EDEAE3 0%, #DCD7CE 48%, #CAC5BA 100%);
+      radial-gradient(90% 60% at 50% 0%, rgba(255, 255, 255, 0.85) 0%, transparent 62%),
+      linear-gradient(180deg, #FFFFFF 0%, #F5F5F5 48%, #ECECEC 100%);
   }
 
   /* Champagne — the editorial founder section, lit from the upper-left. */
   .bg-champagne {
     background:
-      radial-gradient(80% 55% at 28% 12%, rgba(255, 255, 255, 0.65) 0%, transparent 62%),
-      linear-gradient(155deg, #F6EFE2 0%, #EDE3D1 50%, #E1D4BB 100%);
+      radial-gradient(80% 55% at 28% 12%, rgba(255, 255, 255, 0.90) 0%, transparent 62%),
+      linear-gradient(155deg, #FFFFFF 0%, #FAFAFA 50%, #F3F3F3 100%);
   }
 
   /* Sections hold their own stacking context so the travelling reflection

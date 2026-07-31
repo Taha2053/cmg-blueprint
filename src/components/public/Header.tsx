@@ -58,8 +58,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
         isScrolled
-          ? 'bg-gradient-to-b from-[#EEEBE3]/80 to-[#D8D4CA]/75 backdrop-blur-xl border-white/40 shadow-sm'
-          : 'bg-gradient-to-b from-[#F2EFE8]/70 to-[#DFDBD1]/65 backdrop-blur-lg border-white/30'
+          ? 'bg-white/90 backdrop-blur-xl border-black/10 shadow-sm'
+          : 'bg-white/75 backdrop-blur-lg border-black/5'
       }`}
     >
       <div className="hidden lg:block border-b border-black/10">
@@ -119,7 +119,7 @@ export default function Header() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="xl:hidden absolute top-full left-0 right-0 bg-gradient-to-b from-[#EEEBE3] to-[#DAD6CC] border-t border-black/10 p-6 flex flex-col gap-4">
+        <div className="xl:hidden absolute top-full left-0 right-0 bg-white border-t border-black/10 p-6 flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.label}

@@ -101,13 +101,13 @@ export default function Societies() {
         }}
       >
         <div
-          className="flex items-center gap-14 hover:[animation-play-state:paused]"
-          style={{ animation: 'marquee 15s linear infinite' }}
+          className="flex items-center gap-14 w-max hover:[animation-play-state:paused]"
+          style={{ animation: 'marquee 100s linear infinite' }}
         >
           {[...logos, ...logos].map((src, i) => (
             <div
               key={i}
-              className="inline-flex items-center justify-center h-20 w-48 shrink-0"
+              className="inline-flex items-center justify-center h-24 w-56 shrink-0"
             >
               <img
                 src={`/logos/${encodeURI(src)}`}

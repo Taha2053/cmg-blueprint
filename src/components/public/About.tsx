@@ -54,7 +54,7 @@ export default function About() {
               <div className="pointer-events-none absolute -top-5 -left-5 w-full h-full border border-accent/25" aria-hidden />
 
               {/* image */}
-              <div className="relative aspect-[1/1] overflow-hidden bg-[#E7E0D2] shadow-soft-lg ring-1 ring-black/[0.05]">
+              <div className="relative aspect-[1/1] overflow-hidden bg-[#F0F0F0] shadow-soft-lg ring-1 ring-black/[0.05]">
                 <img
                   src="/cabinet.jpg"
                   alt="Bureau MG & Associés"

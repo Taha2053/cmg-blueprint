@@ -45,7 +45,7 @@ function Avatar({ m, size, delay = 0 }: { m: Member; size: 'lg' | 'md'; delay?: 
       transition={{ duration: 0.5, delay }}
     >
       <div
-        className={`relative ${w} aspect-[3/4] rounded-2xl overflow-hidden bg-[#E7E0D2] shadow-soft transition-all duration-500 group-hover:shadow-soft-lg group-hover:-translate-y-1.5 ${
+        className={`relative ${w} aspect-[3/4] rounded-2xl overflow-hidden bg-[#F0F0F0] shadow-soft transition-all duration-500 group-hover:shadow-soft-lg group-hover:-translate-y-1.5 ${
           isFounder ? 'ring-2 ring-accent/40' : 'ring-1 ring-black/[0.06]'
         }`}
       >
@@ -55,8 +55,8 @@ function Avatar({ m, size, delay = 0 }: { m: Member; size: 'lg' | 'md'; delay?: 
             style={{ backgroundImage: `url(${m.photo})` }}
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#E9DFCB] to-[#D8C9AC]">
-            <span className="font-serif text-6xl text-[#A98C5B]/60 select-none">{m.initials}</span>
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#F2F2F2] to-[#E5E5E5]">
+            <span className="font-serif text-6xl text-accent/40 select-none">{m.initials}</span>
           </div>
         )}
       </div>

@@ -42,7 +42,7 @@ export default async function ArticlesList() {
                 href={`/articles/${article.slug}`}
                 className="group block bg-light hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="aspect-[16/11] overflow-hidden bg-[#E7E0D2]">
+                <div className="aspect-[16/11] overflow-hidden bg-[#F0F0F0]">
                   {article.coverImage ? (
                     <img
                       src={article.coverImage}
@@ -50,7 +50,7 @@ export default async function ArticlesList() {
                       className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-[#E9DFCB] to-[#D8C9AC]" />
+                    <div className="w-full h-full bg-gradient-to-br from-[#F2F2F2] to-[#E5E5E5]" />
                   )}
                 </div>
                 <div className="bg-white p-6 min-h-[110px] flex flex-col justify-center">

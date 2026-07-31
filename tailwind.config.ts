@@ -13,9 +13,9 @@ const config: Config = {
     extend: {
       colors: {
         dark: '#171717',
-        light: '#F5F1E8',
-        paper: '#F7F4EC',
-        greige: '#EDE7DA',
+        light: '#FFFFFF',
+        paper: '#FFFFFF',
+        greige: '#F6F6F6',
         accent: '#A81828',
         'accent-crystal': '#881018',
         card: '#1A1A1A',
@@ -23,8 +23,8 @@ const config: Config = {
         'text-primary': '#FFFFFF',
         'text-muted': '#A0A0A0',
         'text-dark': '#0A0A0A',
-        'text-dark-muted': '#6E675B',
-        gold: '#BFA06A',
+        'text-dark-muted': '#555555',
+        gold: '#A81828',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],

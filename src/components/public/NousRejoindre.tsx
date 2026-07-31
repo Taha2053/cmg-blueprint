@@ -54,7 +54,7 @@ export default function NousRejoindre() {
           </motion.div>
 
           <motion.div className="col-span-12 lg:col-span-5 relative h-[400px] lg:h-[600px] overflow-hidden" {...fadeIn}>
-            <div className="absolute inset-0 bg-[#E8E8E6]">
+            <div className="absolute inset-0 bg-[#F0F0F0]">
               <svg viewBox="0 0 500 600" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
                 <defs>
                   <pattern id="rejoindreGrid" width="60" height="60" patternUnits="userSpaceOnUse">
@@ -91,7 +91,7 @@ export default function NousRejoindre() {
         </motion.div>
       </div>
 
-      <div className="bg-[#E8E8E6] py-32 lg:py-40">
+      <div className="bg-[#F0F0F0] py-32 lg:py-40">
         <div className="max-w-[1200px] mx-auto px-6">
           <motion.div className="text-center mb-20" {...fadeUp}>
             <span className="text-text-dark-muted text-xs font-semibold tracking-[0.18em] uppercase">FAQ</span>

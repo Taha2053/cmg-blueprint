@@ -25,9 +25,9 @@ export default function Home() {
         <StatsBar />
         <MerciMourad />
         <About />
-        <Societies />
         <Services />
         <Secteurs />
+        <Societies />
         <Team />
         <Articles />
         <Careers />

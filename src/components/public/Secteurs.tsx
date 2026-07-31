@@ -3,20 +3,23 @@
 import { motion } from 'framer-motion';
 
 const secteurs = [
-  { title: 'Banques et institutions financières', desc: 'Banques, assurances, sociétés de services et institutions financières.', img: '/images/secteurs/banques.jpg' },
-  { title: 'Industrie agroalimentaire', desc: 'Industries agroalimentaires et unités de production.', img: '/images/secteurs/agroalimentaire.jpg' },
-  { title: 'Secteur agricole', desc: 'Exploitations agricoles et filières agro-industrielles.', img: '/images/secteurs/agricole.jpg' },
-  { title: 'Industrie chimique', desc: 'Industries chimiques et unités de transformation.', img: '/images/secteurs/chimique.jpg' },
-  { title: 'Industrie pharmaceutique', desc: 'Laboratoires pharmaceutiques et établissements de santé.', img: '/images/secteurs/pharmaceutique.jpg' },
-  { title: 'Cisternes, bâtiments et travaux publics', desc: 'Construction, BTP et aménagement urbain.', img: '/images/secteurs/btp.jpg' },
-  { title: 'Secteur hôtelier', desc: 'Hôtels, resorts et établissements touristiques.', img: '/images/secteurs/hotelier.jpg' },
-  { title: 'Secteur commercial', desc: 'Grande distribution, commerces et surfaces de vente.', img: '/images/secteurs/commercial.jpg' },
-  { title: 'Industrie mécanique', desc: 'Industries mécaniques et unités de fabrication.', img: '/images/secteurs/mecanique.jpg' },
-  { title: 'Cliniques', desc: 'Cliniques, laboratoires et établissements de soins.', img: '/images/secteurs/cliniques.jpg' },
-  { title: 'Secteur de télécommunication', desc: 'Télécommunications et technologies de l\'information.', img: '/images/secteurs/telecom.jpg' },
-  { title: 'Secteur pétrolier', desc: 'Industrie pétrolière, raffinage et distribution.', img: '/images/secteurs/petrolier.jpg' },
-  { title: 'Promotion immobilière', desc: 'Promotion immobilière et développement foncier.', img: '/images/secteurs/immobiliere.jpg' },
-  { title: 'Industrie d\'hygiène', desc: 'Produits d\'hygiène, cosmétiques et détergents.', img: '/images/secteurs/hygiene.jpg' },
+  { title: 'Bâtiments et travaux publics', desc: 'Construction, BTP et aménagement urbain.', img: '/images/sectors/btp.jpg' },
+  { title: 'Cliniques et des soins de santé', desc: 'Cliniques, laboratoires et établissements de soins.', img: '/images/sectors/cliniques.jpg' },
+  { title: 'Industrie agroalimentaire', desc: 'Industries agroalimentaires et unités de production.', img: '/images/sectors/agroalimentaire.jpg' },
+  { title: 'Industrie chimique', desc: 'Industries chimiques et unités de transformation.', img: '/images/sectors/chimique.jpg' },
+  { title: 'Industrie d\'hygiène', desc: 'Produits d\'hygiène, cosmétiques et détergents.', img: '/images/sectors/hygiene.jpg' },
+  { title: 'Industrie mécanique', desc: 'Industries mécaniques et unités de fabrication.', img: '/images/sectors/mecanique.jpg' },
+  { title: 'Industrie pétrolière', desc: 'Industrie pétrolière, raffinage et distribution.', img: '/images/sectors/petrolier.jpg' },
+  { title: 'Industrie pharmaceutique', desc: 'Laboratoires pharmaceutiques et établissements de santé.', img: '/images/sectors/pharmaceutique.jpg' },
+  { title: 'Industries des matériaux de construction', desc: 'Matériaux de construction et unités de production.', img: '/images/sectors/materiaux-construction.jpg' },
+  { title: 'Industries textiles et habillement', desc: 'Textiles, habillement et filières de production.', img: '/images/sectors/textile.jpg' },
+  { title: 'Promotion immobilière', desc: 'Promotion immobilière et développement foncier.', img: '/images/sectors/immobiliere.jpg' },
+  { title: 'Secteur agricole', desc: 'Exploitations agricoles et filières agro-industrielles.', img: '/images/sectors/agricole.jpg' },
+  { title: 'Secteur commercial', desc: 'Grande distribution, commerces et surfaces de vente.', img: '/images/sectors/commercial.jpg' },
+  { title: 'Secteur de télécommunication', desc: 'Télécommunications et technologies de l\'information.', img: '/images/sectors/telecom.jpg' },
+  { title: 'Secteur hôtelier', desc: 'Hôtels, resorts et établissements touristiques.', img: '/images/sectors/hotelier.jpg' },
+  { title: 'Secteur logistique', desc: 'Logistique, transport et chaînes d\'approvisionnement.', img: '/images/sectors/logistique.jpg' },
+  { title: 'Startups', desc: 'Startups et entreprises innovantes.', img: '/images/sectors/startups.jpg' },
 ];
 
 const fadeUp = {

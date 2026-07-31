@@ -34,7 +34,9 @@ export default function SmoothScroll() {
       if (!target) return;
 
       e.preventDefault();
-      lenis.scrollTo(target as HTMLElement, { offset: -96 });
+      const rect = target.getBoundingClientRect();
+      const targetScroll = rect.top + window.scrollY + rect.height / 2 - window.innerHeight / 2;
+      lenis.scrollTo(Math.max(0, targetScroll));
       history.pushState(null, '', id);
     }
     document.addEventListener('click', onClick);

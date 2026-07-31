@@ -43,7 +43,7 @@ export default async function Articles() {
               href={`/articles/${article.slug}`}
               className="group block bg-light hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="aspect-[16/11] overflow-hidden bg-[#E7E0D2]">
+              <div className="aspect-[3/4] overflow-hidden bg-[#E7E0D2]">
                 {article.coverImage ? (
                   <img
                     src={article.coverImage}

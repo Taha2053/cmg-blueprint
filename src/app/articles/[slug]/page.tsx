@@ -27,7 +27,7 @@ export default async function ArticlePage({ params }: Props) {
         </Link>
 
         {article.coverImage && (
-          <div className="aspect-[16/9] overflow-hidden mb-10">
+          <div className="aspect-[3/4] max-h-[70vh] w-full mx-auto max-w-[480px] overflow-hidden mb-10">
             <img
               src={article.coverImage}
               alt=""

@@ -134,6 +134,66 @@ function Citation() {
   );
 }
 
+/* ── Static block — Walid Moussa (below the Mourad slideshow) ──────── */
+function Walid() {
+  return (
+    <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      {/* portrait */}
+      <div className="lg:col-span-4 relative mx-auto w-full max-w-[280px]">
+        <div className="relative w-full h-[320px] sm:h-[360px]">
+          <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 w-[118%] max-w-none aspect-square rounded-full border border-gold/20 -z-10" />
+          <div className="absolute inset-x-3 top-2 bottom-0 rounded-t-full bg-[#F2F2F2]/70 -z-10" />
+          <div className="absolute inset-0 rounded-t-full overflow-hidden shadow-soft-lg ring-1 ring-black/[0.04]">
+            <div className="absolute inset-0 bg-cover bg-[position:50%_8%]"
+              style={{ backgroundImage: 'url(/cabinet/Walid-Moussa.jpeg)' }} />
+          </div>
+        </div>
+      </div>
+
+      {/* identity + bio */}
+      <div className="lg:col-span-8">
+        <h2 className="relative z-10 font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-text-dark tracking-tight">
+          Monsieur <span className="text-accent">Walid</span>
+        </h2>
+        <span
+          aria-hidden
+          style={{ fontFamily: 'var(--font-signature), cursive' }}
+          className="pointer-events-none select-none block text-5xl sm:text-6xl lg:text-7xl text-text-dark/[0.10] leading-[1.1] -mt-3 lg:-mt-5 pl-6"
+        >
+          Walid Moussa
+        </span>
+
+        <p className="font-serif text-xl lg:text-2xl leading-[1.5] text-text-dark mt-6 max-w-xl">
+          Expert-comptable et commissaire aux comptes (
+          <span className="text-accent">Tunisie &amp; France</span>), Managing Partner.
+        </p>
+
+        <div className="grid sm:grid-cols-2 gap-8 mt-8">
+          <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
+            Walid Moussa a travaillé pendant 10 ans au sein de KPMG Audit Paris (France) dans les
+            domaines de l&apos;audit et du conseil, avant de rejoindre le Cabinet Mourad Guellaty &amp;
+            Associés en Tunisie en 2014.
+          </p>
+          <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
+            Fort de 20 années d’expérience, il a une parfaite maîtrise de la conduite des missions
+            d’audit (comptes sociaux, comptes consolidés, reporting), aussi bien au niveau
+            international que national, avec de solides connaissances des normes IFRS.
+          </p>
+          <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
+            Il est régulièrement intervenu dans des missions de conseil et d&apos;audit en
+            environnement international, y compris pour des sociétés cotées, et a été en charge de la
+            coordination de l’audit à l’international pour de grands groupes industriels étrangers.
+          </p>
+          <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
+            Depuis 2014, il intervient sur l’audit de groupes internationaux et nationaux dans divers
+            secteurs : industrie, secteur financier, pharmaceutique et technologies de l’information.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function MerciMourad() {
   const [[i, dir], setState] = useState<[number, number]>([0, 0]);
 
@@ -151,7 +211,7 @@ export default function MerciMourad() {
         <div className="flex items-center gap-4 mb-10 lg:mb-12">
           <span className="h-px w-10 bg-gold" />
           <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">
-            Fondateur
+            Direction
           </span>
         </div>
 
@@ -214,6 +274,11 @@ export default function MerciMourad() {
               <ArrowRight size={16} />
             </button>
           </div>
+        </div>
+
+        {/* Legende — Walid Moussa (static, below the slideshow) */}
+        <div className="mt-16 lg:mt-20 border-t border-black/10 pt-14 lg:pt-16">
+          <Walid />
         </div>
       </div>
     </section>

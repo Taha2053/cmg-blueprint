@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 
 const secteurs = [
+  { title: 'Banques & institutions financières', desc: 'Banques, assurances et institutions financières.', img: '/images/sectors/financier.jpg' },
   { title: 'Bâtiments et travaux publics', desc: 'Construction, BTP et aménagement urbain.', img: '/images/sectors/btp.jpg' },
   { title: 'Cliniques et des soins de santé', desc: 'Cliniques, laboratoires et établissements de soins.', img: '/images/sectors/cliniques.jpg' },
   { title: 'Industrie agroalimentaire', desc: 'Industries agroalimentaires et unités de production.', img: '/images/sectors/agroalimentaire.jpg' },
@@ -19,6 +20,9 @@ const secteurs = [
   { title: 'Secteur de télécommunication', desc: 'Télécommunications et technologies de l\'information.', img: '/images/sectors/telecom.jpg' },
   { title: 'Secteur hôtelier', desc: 'Hôtels, resorts et établissements touristiques.', img: '/images/sectors/hotelier.jpg' },
   { title: 'Secteur logistique', desc: 'Logistique, transport et chaînes d\'approvisionnement.', img: '/images/sectors/logistique.jpg' },
+  { title: 'Startups', desc: 'Startups et entreprises innovantes.', img: '/images/sectors/startups.jpg' },
+  { title: 'Énergies renouvelables', desc: 'Énergies vertes et transition énergétique.', img: '/images/sectors/energies-renouvelables.jpg' },
+  { title: 'Secteur des technologies', desc: 'Technologies de l\'information et innovation.', img: '/images/sectors/technologies.jpg' },
 ];
 
 const fadeUp = {
